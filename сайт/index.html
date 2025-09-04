@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIP SHOP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Вертикальні смужки для фону всього сайту */
+      body {
+        background: linear-gradient(
+          to right,
+          #1f2937 0%,
+          #1f2937 49%,
+          #059669 50%,
+          #059669 51%,
+          #1f2937 52%,
+          #1f2937 100%
+        );
+        background-size: 20px 100%;
+        opacity: 0.95;
+      }
+      /* Контейнер для зображень товарів */
+      .product-image-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 75%;
+        overflow: hidden;
+      }
+      .product-image-container img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 0.5rem;
+      }
+      /* Стилі для іконок категорій у навігації */
+      .nav-icon {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        transition: opacity 0.2s;
+      }
+      .nav-icon:hover {
+        opacity: 0.75;
+      }
+      /* Вирівнювання карток товарів */
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+      .product-card h3 {
+        min-height: 3rem;
+      }
+      .product-card p {
+        min-height: 2rem;
+      }
+      /* Бігуча стрічка для брендів */
+      .marquee-container {
+        overflow: hidden;
+        width: 100%;
+        background: #fff;
+        padding: 1rem 0;
+      }
+      .marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 20s linear infinite;
+      }
+      .marquee-item {
+        flex: 0 0 auto;
+        width: 200px;
+        height: 200px;
+        margin-right: 1rem;
+      }
+      .marquee-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      /* Стилі для іконок соцмереж */
+      .social-icon {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        background: transparent; /* Явно прозорий фон */
+        display: block; /* Забезпечує правильне позиціонування */
+        transition: opacity 0.2s;
+      }
+      .social-icon:hover {
+        opacity: 0.75;
+      }
+      /* Контейнер для соцмереж */
+      .social-container {
+        background: transparent; /* Без фону, лише смужки сайту */
+        padding: 2rem 0;
+      }
+    </style>
+  </head>
+  <body class="font-sans">
+    <!-- Навігація -->
+    <nav class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-extrabold">PIP SHOP</h1>
+        <ul class="flex space-x-4 items-center">
+          <li>
+            <a href="#"
+              ><img src="images/home.png" alt="Головна" class="nav-icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/man.png" alt="Чоловіче" class="nav-icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/woman.png" alt="Жіноче" class="nav-icon"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/basket.png" alt="Кошик" class="nav-icon"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Головна секція -->
+    <section class="container mx-auto py-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Товар 1 -->
+        <div class="bg-white rounded-lg shadow-md p-4 product-card">
+          <div class="product-image-container">
+            <img src="images/img1.jpg" alt="Футболка" />
+          </div>
+          <h3 class="text-2xl font-bold mt-2 text-gray-800">
+            Чоловіча футболка
+          </h3>
+          <p class="text-lg font-semibold text-gray-900">599 грн</p>
+          <button
+            class="mt-4 bg-emerald-600 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-emerald-700 transition duration-200 w-full"
+          >
+            Додати до кошика
+          </button>
+        </div>
+        <!-- Товар 2 -->
+        <div class="bg-white rounded-lg shadow-md p-4 product-card">
+          <div class="product-image-container">
+            <img src="images/img2.jpg" alt="Джинси" />
+          </div>
+          <h3 class="text-2xl font-bold mt-2 text-gray-800">Жіночі джинси</h3>
+          <p class="text-lg font-semibold text-gray-900">1299 грн</p>
+          <button
+            class="mt-4 bg-emerald-600 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-emerald-700 transition duration-200 w-full"
+          >
+            Додати до кошика
+          </button>
+        </div>
+        <!-- Товар 3 -->
+        <div class="bg-white rounded-lg shadow-md p-4 product-card">
+          <div class="product-image-container">
+            <img src="images/img3.jpg" alt="Куртка" />
+          </div>
+          <h3 class="text-2xl font-bold mt-2 text-gray-800">Зимова куртка</h3>
+          <p class="text-lg font-semibold text-gray-900">2499 грн</p>
+          <button
+            class="mt-4 bg-emerald-600 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-emerald-700 transition duration-200 w-full"
+          >
+            Додати до кошика
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Бігуча стрічка з брендами -->
+    <section class="container mx-auto py-8">
+      <div class="marquee-container">
+        <div class="marquee">
+          <!-- Повторюємо елементи для циклічності -->
+          <div class="marquee-item">
+            <a href="https://www.balenciaga.com/" target="_blank">
+              <img src="images/balens.gif" alt="Balenciaga" />
+            </a>
+          </div>
+          <div class="marquee-item">
+            <a href="https://www.maisonmargiela.com/en-ca/" target="_blank">
+              <img src="images/mm.gif" alt="Maison Margiela" />
+            </a>
+          </div>
+          <div class="marquee-item">
+            <a href="https://www.gucci.com/us/en/" target="_blank">
+              <img src="images/gucci.gif" alt="Gucci" />
+            </a>
+          </div>
+          <div class="marquee-item">
+            <a href="https://www.prada.com/us/en.html" target="_blank">
+              <img src="images/prada.gif" alt="Prada" />
+            </a>
+          </div>
+          <div class="marquee-item">
+            <a
+              href="https://us.louisvuitton.com/eng-us/homepage"
+              target="_blank"
+            >
+              <img src="images/lv.gif" alt="Louis Vuitton" />
+            </a>
+          </div>
+          <!-- Дублікати для безшовної анімації -->
+          <div class="marquee-item">
+            <a href="https://www.balenciaga.com/" target="_blank">
+              <img src="images/balens.gif" alt="Balenciaga" />
+            </a>
+          </div>
+          <div class="marquee-item">
+            <a href="https://www.maisonmargiela.com/en-ca/" target="_blank">
+              <img src="images/mm.gif" alt="Maison Margiela" />
+            </a>
+          </div>
+          <div class="marquee-item">
+            <a href="https://www.gucci.com/us/en/" target="_blank">
+              <img src="images/gucci.gif" alt="Gucci" />
+            </a>
+          </div>
+          <div class="marquee-item">
+            <a href="https://www.prada.com/us/en.html" target="_blank">
+              <img src="images/prada.gif" alt="Prada" />
+            </a>
+          </div>
+          <div class="marquee-item">
+            <a
+              href="https://us.louisvuitton.com/eng-us/homepage"
+              target="_blank"
+            >
+              <img src="images/lv.gif" alt="Louis Vuitton" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок із соцмережами -->
+    <section class="container mx-auto py-8 social-container">
+      <div class="flex justify-center space-x-12">
+        <!-- Переконайтеся, що inst.png і tg.png — це PNG із прозорим фоном -->
+        <a href="https://www.instagram.com/pipshop_official/" target="_blank">
+          <img src="images/inst.png" alt="Instagram" class="social-icon" />
+        </a>
+        <a href="https://t.me/pipshop_bot" target="_blank">
+          <img src="images/tg.png" alt="Telegram" class="social-icon" />
+        </a>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="bg-gray-800 text-white p-4 text-center">
+      <p>&copy; 2025 PIP SHOP. Усі права захищено.</p>
+    </footer>
+
+    <script>
+      // Додавання простої логіки для кнопок
+      document.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          alert("Товар додано до кошика!");
+        });
+      });
+    </script>
+  </body>
+</html>
